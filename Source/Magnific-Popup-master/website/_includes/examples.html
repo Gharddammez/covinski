@@ -5,7 +5,7 @@
     ('__proto__' in {} ? 'zepto' : 'jquery') +
     '.min.js><\/script>')
   </script>
-  <script src="dist/jquery.magnific-popup.js?v={{site.mfpversion}}"></script>
+  <script src="dist/jquery.magnific-popup.js?v={% raw %}{{site.mfpversion}}{% endraw %}"></script>
   
 {% else %}
   <script>
@@ -13,7 +13,7 @@
     ('__proto__' in {} ? 'zepto' : 'jquery') +
     '.min.js><\/script>')
   </script>
-  <script src="dist/jquery.magnific-popup.min.js?v={{site.mfpversion}}"></script>
+  <script src="dist/jquery.magnific-popup.min.js?v={% raw %}{{site.mfpversion}}{% endraw %}"></script>
 {% endif %}
 
 <!--

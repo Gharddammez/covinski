@@ -3,26 +3,26 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
 
-    <title>{{ page.title }}</title>
+    <title>{% raw %}{{ page.title }}{% endraw %}</title>
     
     <meta charset="utf-8"> 
-    <meta name="description" content="{{page.description}}"/>
+    <meta name="description" content="{% raw %}{{page.description}}{% endraw %}"/>
     <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
     <meta name="author" content="Dmitry Semenov">
-    <link rel="canonical" href="{{page.canonical_url}}" />
+    <link rel="canonical" href="{% raw %}{{page.canonical_url}}{% endraw %}" />
 
-    <meta property="og:url" content="{{page.canonical_url}}">
-    <meta property="og:title" content="{{page.title}}">
-    <meta property="og:description" content="{{page.description}}">
+    <meta property="og:url" content="{% raw %}{{page.canonical_url}}{% endraw %}">
+    <meta property="og:title" content="{% raw %}{{page.title}}{% endraw %}">
+    <meta property="og:description" content="{% raw %}{{page.description}}{% endraw %}">
     <meta property="og:image" content="http://dimsemenov.com/magnific-og-400x400.jpg">
 
     <link href="https://plus.google.com/102586375605352607718" rel="publisher" />
 
     {% if site.url == 'local' %}
-      <link href="site-assets/site.css?v={{site.mfpversion}}" rel="stylesheet" />
-      <link href="dist/magnific-popup.css?v={{site.mfpversion}}" rel="stylesheet" />
+      <link href="site-assets/site.css?v={% raw %}{{site.mfpversion}}{% endraw %}" rel="stylesheet" />
+      <link href="dist/magnific-popup.css?v={% raw %}{{site.mfpversion}}{% endraw %}" rel="stylesheet" />
     {% else %}
-      <link href="site-assets/all.min.css?v={{site.mfpversion}}" rel="stylesheet" />
+      <link href="site-assets/all.min.css?v={% raw %}{{site.mfpversion}}{% endraw %}" rel="stylesheet" />
     {% endif %}
 
 
@@ -36,7 +36,7 @@
     
   <div id="main-wrapper">
 
-    {{ content | markdown }}
+    {% raw %}{{ content | markdown }}{% endraw %}
 
     <div id="footer">
       Created by <a href="http://dimsemenov.com" rel="author">Dmitry Semenov</a>.{% if page.include_credit %} Photography in demo by <a href="http://www.squiver.com">Marsel Van Oosten</a>{% endif %}
@@ -44,7 +44,7 @@
 
   </div>
   
-  {{page.footer}}
+  {% raw %}{{page.footer}}{% endraw %}
 
   {% if page.addjs %}
     {% if site.url == 'local' %}
@@ -53,14 +53,14 @@
         ('__proto__' in {} ? 'zepto' : 'jquery') +
         '.js><\/script>')
       </script>
-      <script src="dist/jquery.magnific-popup.js?v={{site.mfpversion}}"></script>
+      <script src="dist/jquery.magnific-popup.js?v={% raw %}{{site.mfpversion}}{% endraw %}"></script>
     {% else %}
       <script>
         document.write('<script src=third-party-libs/' +
         ('__proto__' in {} ? 'zepto' : 'jquery') +
         '.min.js><\/script>')
       </script>
-      <script src="dist/jquery.magnific-popup.min.js?v={{site.mfpversion}}"></script>
+      <script src="dist/jquery.magnific-popup.min.js?v={% raw %}{{site.mfpversion}}{% endraw %}"></script>
     {% endif %}
   {% endif %}
 
